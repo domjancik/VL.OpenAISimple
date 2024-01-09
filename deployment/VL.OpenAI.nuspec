@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
-    <id>VL.Nuget.Template</id>
-    <version>1.0.0</version>
-    <title>VL.Nuget.Template</title>
-    <authors>domj</authors>
-    <owners>domj</owners>
-    <projectUrl>https://github.com/domjancik/VL.Nuget.Template</projectUrl>
+    <id>VL.OpenAI</id>
+    <version>0.0.1</version>
+    <title>VL.OpenAI</title>
+    <authors>Dominik Jancik (domj)</authors>
+    <owners>Dominik Jancik (domj)</owners>
+    <projectUrl>https://github.com/domjancik/VL.OpenAI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <summary>Clean nuget template (VL only)</summary>
-    <description>Clean nuget template (VL only)</description>
+    <summary>vvvv gamma nodes to interact with OpenAI APIs</summary>
+    <description>VL/vvvv gamma nodeset wrapping the https://github.com/betalgo/openai library, enabling access to OpenAI APIs from vvvv gamma</description>
     <tags>nuget</tags>
 	<license type="expression">MIT</license>
 	<icon>icon\nugeticon.png</icon>

@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="EMmQUjRpZ3mPfTEEA0yueK" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="ACwLMEAeXcTOlfIlaZVQ9S" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="Rgz0iK0cdl5O6XLZAnSI2k">
+    <Canvas Id="EtMz6eWyJpjMOVOROl6714" DefaultCategory="VL.OpenAI" CanvasType="FullCategory">
+      <!--
+
+    ************************ Chat ************************
+
+-->
+      <Node Name="Chat" Bounds="67,75" Id="RkWhDedeKsaLjfvNWqv5NF">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+          <Choice Kind="ContainerDefinition" Name="Process" />
+        </p:NodeReference>
+        <Patch Id="QNZxkxiHAc4NFqslAJG33O">
+          <Canvas Id="AcTllpFG1oHLkbO3ojcBDh" CanvasType="Group">
+            <Node Bounds="119,239,54,26" Id="COro4yBsUKUN5vT65ukno7">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.OpenAIAPI" LastDependency="OpenAI_API.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="OpenAI_API" />
+                <CategoryReference Kind="AssemblyCategory" Name="OpenAIAPI" />
+                <Choice Kind="OperationCallFlag" Name="Create" />
+              </p:NodeReference>
+              <Pin Id="JF193lKhkrbPWptuAm7orb" Name="Api Keys" Kind="InputPin" />
+              <Pin Id="JRJODeiEEmCMjhkzibjIZv" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <Node Bounds="119,200,77,19" Id="T0MIuAxDjeAQXZIhNIL9AR">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.APIAuthentication" LastDependency="OpenAI_API.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="APIAuthentication" />
+                <Choice Kind="OperationCallFlag" Name="LoadFromEnv" />
+              </p:NodeReference>
+              <Pin Id="SrFxB5yn21VOnVCIrUEGSV" Name="Result" Kind="OutputPin" />
+            </Node>
+            <Pad Id="V0F9Yy4yvqyOJMlk8OI3re" SlotId="Cj8PF1mBeBfM4D6KW1W1s5" Bounds="173,377" />
+            <Node Bounds="119,287,54,26" Id="MHVCan1PQGULPNAusjpdKV">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.OpenAIAPI" LastDependency="OpenAI_API.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="OpenAIAPI" />
+                <Choice Kind="OperationCallFlag" Name="Chat" />
+              </p:NodeReference>
+              <Pin Id="NkdloDwP5oFM6M0qtleB7G" Name="Input" Kind="StateInputPin" />
+              <Pin Id="SzmN7wYHh2nMB2hJq7qgbU" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="GjvXZMy4GGWOl3LAe67hMt" Name="Chat" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="372,240,82,19" Id="LdSXgtrtR5HL05PDXFSWcS">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="Model" />
+                <Choice Kind="OperationCallFlag" Name="ChatGPTTurbo" />
+              </p:NodeReference>
+              <Pin Id="GFf3jgcdF2JPw0cZuTOS5o" Name="Chat GPTTurbo" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="396,1256,65,19" Id="Jdw8H9KLyIqOPw9qSeU336">
+              <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
+              </p:NodeReference>
+              <Pin Id="ByXqtvkMNYIMp7xarfKrQ4" Name="Async Notifications" Kind="InputPin" />
+              <Pin Id="MNEKVnrmy0POeT45b3Bzmf" Name="Reset" Kind="InputPin" />
+              <Pin Id="GRJRD4sAf0tPMvJCAIoeMk" Name="Value" Kind="OutputPin" />
+              <Pin Id="LuneX4urL9KOps3jOYgNxu" Name="On Data" Kind="OutputPin" />
+            </Node>
+            <Pad Id="RBGLeDbw30IN8iQqowNkJf" Comment="" Bounds="399,1305,185,18" ShowValueBox="true" isIOBox="true" />
+            <ControlPoint Id="EZJ8sCsthG9OGmfNBuHIhp" Bounds="282,175" />
+            <ControlPoint Id="Mb2nzi8UmCYPEmpaNh93Hs" Bounds="621,172" />
+            <ControlPoint Id="IxEiThOoYsBOLkCmLrXj5N" Bounds="353,175" />
+            <ControlPoint Id="Nz2ARHJ49hqN05bW0dOBSR" Bounds="541,175" />
+            <ControlPoint Id="RcNNHjgPhFqPcTGHn2VUc6" Bounds="400,1342" />
+            <ControlPoint Id="KH572VDO9l5PnpcYNCu5gr" Bounds="539,1338" />
+            <!--
+
+    ************************ BootstrapConversation ************************
+
+-->
+            <Node Name="BootstrapConversation" Bounds="699,273,352,273" Id="PEQP3M0RU3oLuSswwusHFS">
+              <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                <Choice Kind="OperationDefinition" Name="Operation" />
+              </p:NodeReference>
+              <Patch Id="AgJgxlJQWVoN0Z4GPYW2ae">
+                <Node Bounds="711,328,105,26" Id="HlgOLIxvdaoO04OCRDIWVo">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.IChatEndpoint" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="IChatEndpoint" NeedsToBeDirectParent="true" />
+                    <Choice Kind="OperationCallFlag" Name="CreateConversation" />
+                  </p:NodeReference>
+                  <Pin Id="OAkDrmReyDpNBdmoT8V6Xx" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="SejudZxRHWvMtFvIetPFmD" Name="Default Chat Request Args" Kind="InputPin" />
+                  <Pin Id="MFPWux4SgWeLyzlKjhfaQS" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="AbdoNMD3svBPfVJSHTfKIW" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="811,375,63,26" Id="SFgr2OGn6EFOoKTpn8yRZl">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.Conversation" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="Conversation" />
+                    <Choice Kind="OperationCallFlag" Name="SetModel" />
+                  </p:NodeReference>
+                  <Pin Id="NdNPLfP3MSdOwQtK4Az2uI" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="GF88potSlZoLxReXBGtVfN" Name="Value" Kind="InputPin" />
+                  <Pin Id="PpaZv6fiy4KNOUIwmzT9Zk" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="812,418,103,26" Id="VMGIC3q3W7jMd4ndnfNvy8">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.Conversation" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="RequestParameters" />
+                  </p:NodeReference>
+                  <Pin Id="AioXCsAOP94ODRQtbnMoBi" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="Pc84PK0opp6L6nc9PoQ7HV" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="BagKFKpHzdhPsEHPQ4KGl0" Name="Request Parameters" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="910,461,88,26" Id="ANjRZ3YPEJgNYgEgViLVOD">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.ChatRequest" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="ChatRequest" NeedsToBeDirectParent="true" />
+                    <Choice Kind="OperationCallFlag" Name="SetTemperature" />
+                  </p:NodeReference>
+                  <Pin Id="PjMZpJx5NqCOfuCmiO66Bn" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="JYVV4d4D8U6MCURlX0MGFn" Name="Value" Kind="InputPin" />
+                  <Pin Id="TLghEABLUbwQVzx4eMIvFw" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="993,411,46,26" Id="DyK0ABG0QeqMug4k91fPbD">
+                  <p:NodeReference LastCategoryFullName="Primitive.Nullable" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Nullable" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="NDQ9zBtf4i6M11OhCH9czY" Name="Value" Kind="InputPin" />
+                  <Pin Id="PqciPnqjPCqMhfnGHSa481" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Link Id="ULzbR3OY9FlOuWkzVvxLlZ" Ids="AbdoNMD3svBPfVJSHTfKIW,NdNPLfP3MSdOwQtK4Az2uI" />
+                <Link Id="MdKOkPvaI5aMmSXZuxrBO9" Ids="PpaZv6fiy4KNOUIwmzT9Zk,AioXCsAOP94ODRQtbnMoBi" />
+                <Link Id="BZGr6FCyiT3MKNrQhzlWX3" Ids="BagKFKpHzdhPsEHPQ4KGl0,PjMZpJx5NqCOfuCmiO66Bn" />
+                <Link Id="MbR9lDOFfbiQHruf7KhzOj" Ids="PqciPnqjPCqMhfnGHSa481,JYVV4d4D8U6MCURlX0MGFn" />
+                <ControlPoint Id="VhdzpnDioPDN6aGoaEQS79" Bounds="714,291" />
+                <Link Id="LKNSGu5lJMMM1r4tBEuWrx" Ids="VhdzpnDioPDN6aGoaEQS79,OAkDrmReyDpNBdmoT8V6Xx" />
+                <Pin Id="UV9s28qt8ZRNSJWmtZs4rn" Name="Input" Kind="InputPin" Bounds="714,291" />
+                <Link Id="KvQBmyTYyaCLh2LPDYyZC3" Ids="UV9s28qt8ZRNSJWmtZs4rn,VhdzpnDioPDN6aGoaEQS79" IsHidden="true" />
+                <ControlPoint Id="KLbD46fjEyDMmF7cl4UXXJ" Bounds="878,294" />
+                <Link Id="I80fsXsBkBePbbUFUP2SkA" Ids="KLbD46fjEyDMmF7cl4UXXJ,GF88potSlZoLxReXBGtVfN" />
+                <Pin Id="LmjA6tQJkRDNzu2NR8Jqz9" Name="Model" Kind="InputPin" Bounds="878,294" />
+                <Link Id="NI9r9BnzHoLPPrtsAnHmWS" Ids="LmjA6tQJkRDNzu2NR8Jqz9,KLbD46fjEyDMmF7cl4UXXJ" IsHidden="true" />
+                <ControlPoint Id="AVFXLQ1tmKeMedjbWhaian" Bounds="814,529" />
+                <Link Id="OydXTKwV7UwNU5GAZulzpH" Ids="Pc84PK0opp6L6nc9PoQ7HV,AVFXLQ1tmKeMedjbWhaian" />
+                <Pin Id="FvtxzzhLcmHLtO68CgzTPj" Name="Output" Kind="OutputPin" Bounds="818,527" />
+                <Link Id="Nli9tDhxShfLzDRQenJTFK" Ids="AVFXLQ1tmKeMedjbWhaian,FvtxzzhLcmHLtO68CgzTPj" IsHidden="true" />
+              </Patch>
+            </Node>
+            <Node Bounds="353,208,65,19" Id="N74uSY15yByMrc2PdxlxBL">
+              <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="IsAssigned" />
+              </p:NodeReference>
+              <Pin Id="KOSwjAGuV60Pxh1dM7m6T0" Name="X" Kind="InputPin" />
+              <Pin Id="V68dwT26llQQcgjamBLYEL" Name="Result" Kind="OutputPin" />
+              <Pin Id="Fn1qUgyS9X2MvY2ofqPTVj" Name="Not Assigned" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="352,274,45,19" Id="JvpszAh1X40QZdiy1M0mek">
+              <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Control" NeedsToBeDirectParent="true" />
+                <Choice Kind="OperationCallFlag" Name="Switch" />
+              </p:NodeReference>
+              <Pin Id="TdBdvXCwSIXM2hj79fzkMK" Name="Index" Kind="InputPin" />
+              <Pin Id="CnWT55iKp6gPu5EqH9LWZi" Name="Input" Kind="InputPin" />
+              <Pin Id="TA3X2lfjsaXN2kfMwnb4s2" Name="Input 2" Kind="InputPin" />
+              <Pin Id="F9SYPasUlU9LiMlmji3843" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="249,725,276,209" Id="OhJN7w0fX7WPCplwpTi0j0">
+              <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Primitive" />
+                <Choice Kind="ApplicationStatefulRegion" Name="If" />
+              </p:NodeReference>
+              <Pin Id="IGQbmNVGAcBPwQNPw6oURU" Name="Condition" Kind="InputPin" />
+              <Patch Id="KgYSmSSt5BmOocfAeJES6f" ManuallySortedPins="true">
+                <Patch Id="DaOaqmre2YlOvGU6C7dg2Y" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="FPrCgxZTxCtPB6B2rzemgU" Name="Then" ManuallySortedPins="true" />
+                <Node Bounds="261,748,95,26" Id="OHKxTmOedm2OdIxB5QC3yc">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.Conversation" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="AppendUserInput" />
+                  </p:NodeReference>
+                  <Pin Id="SCGm1ma0E0gQdsDmCsFI4E" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="OhmpREhVJGHNQLGa2fBIE7" Name="Text" Kind="InputPin" />
+                  <Pin Id="Etmfoj6417qPcFI4PtUCKv" Name="Images" Kind="InputPin" />
+                  <Pin Id="KSOH3ssc2wvMtcbEJjIQCc" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="261,804,161,26" Id="DfGpKqdVg5MPJQKxh9gYQS">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.Conversation" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="GetResponseFromChatbotAsync" />
+                  </p:NodeReference>
+                  <Pin Id="BZN2U5ou4jBOtFWo2FERbo" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="Ft822taPPEMN40POXv8JWe" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="KMQITrMZiF2LnXM2X2OpCa" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="398,888,41,26" Id="F9FS2t3vfpLLr1U1wpTMMB">
+                  <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Spread" NeedsToBeDirectParent="true" />
+                    <Choice Kind="OperationCallFlag" Name="Add" />
+                  </p:NodeReference>
+                  <Pin Id="RSSLiCbLgbsNdj1AmidV2p" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="TtcNkA3NLO0OY5ZdqG52MQ" Name="Item" Kind="InputPin" />
+                  <Pin Id="Ac7UGcJm0MqLU1PM04sg1X" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="434,848,79,26" Id="SU3z1rlbuG8LLB5gXS2n2V">
+                  <p:NodeReference LastCategoryFullName="Reactive.Task" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="Category" Name="Reactive" />
+                    <CategoryReference Kind="ClassType" Name="Task" />
+                    <Choice Kind="OperationCallFlag" Name="ToObservable" />
+                  </p:NodeReference>
+                  <Pin Id="OkJ5WB8u9lpO5KgyJLkf0e" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="OZ9oLdwE83DMdezM4CZseQ" Name="Result" Kind="OutputPin" />
+                </Node>
+              </Patch>
+              <ControlPoint Id="E4qA47YclONOK94vCfDW3w" Bounds="399,731" Name="Observables" Alignment="Top" />
+              <ControlPoint Id="SyfA6JPqSc9PHFleuzty7L" Bounds="399,928" Name="Observables" Alignment="Bottom" />
+              <ControlPoint Id="LSf7ARffFkcMmm1lFZAJC9" Bounds="264,928" Name="Conversation" Alignment="Bottom" />
+              <ControlPoint Id="EdxGXhjjmIAOAMGjxE0O13" Bounds="264,731" Name="Conversation" Alignment="Top" />
+            </Node>
+            <Pad Id="QJuPRB57oWBOYJjgTIUBI5" SlotId="ImDOzt9nNJuOjv34RfSFKS" Bounds="357,614" />
+            <Node Bounds="341,478,143,80" Id="MgqBKq6XqcuOW8GVrLPTrR">
+              <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Primitive" />
+                <Choice Kind="ApplicationStatefulRegion" Name="If" />
+              </p:NodeReference>
+              <Pin Id="T0qDTYtQykxPo6LJt6hXBf" Name="Condition" Kind="InputPin" />
+              <ControlPoint Id="OINB2Gv7xqCLJnpQwyu5BZ" Bounds="356,552" Alignment="Bottom" />
+              <ControlPoint Id="HPHFrzfaq8ePt9bT89FvLI" Bounds="356,484" Alignment="Top" />
+              <Patch Id="HvwZrdIbq3JLRzxNk09jWf" ManuallySortedPins="true">
+                <Patch Id="DEpDKwVmrKMNimzSYgP9Oo" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="VVhdnaiDMImMOR3CdpElLY" Name="Then" ManuallySortedPins="true" />
+                <Node Bounds="353,510,119,19" Id="OTHZk2GMSqZNPFf1rf8z7D">
+                  <p:NodeReference LastCategoryFullName="VL.OpenAI.Chat" LastDependency="VL.OpenAI.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="BootstrapConversation" />
+                  </p:NodeReference>
+                  <Pin Id="Eu9uFFlOmqIPgOrdsGM26y" Name="Input" Kind="InputPin" />
+                  <Pin Id="MBalmrNot3MQVjcEAFlPLq" Name="Model" Kind="InputPin" />
+                  <Pin Id="HJxYlwmT0vJPEgQghoK0YT" Name="Output" Kind="OutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Node Bounds="467,343,54,19" Id="BAuH8z5ioY8MSy3eK74Tkx">
+              <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="OnOpen" />
+              </p:NodeReference>
+              <Pin Id="ECKcNiixcmSL3PD21ZwPpa" Name="Simulate" Kind="InputPin" />
+              <Pin Id="QwPlPRDGKIWM8QSqDxsnDE" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="508,399,30,19" Id="MoWRbCkcg7aO0gBAYxIhap">
+              <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="OR" />
+              </p:NodeReference>
+              <Pin Id="MC3H3OGBPVkMr74jzYC4lI" Name="Input" Kind="StateInputPin" />
+              <Pin Id="JeaFT1XdxN3MhuSsuF6Xn8" Name="Input 2" Kind="InputPin" />
+              <Pin Id="JmyM0r1KISuOjDsw1iLYGd" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <Pad Id="NNb0mnHTRrpLoMOcH2R5Ro" SlotId="ImDOzt9nNJuOjv34RfSFKS" Bounds="358,412" />
+            <Node Bounds="398,968,45,19" Id="SPJaZsvwH5tPrBQ7ER7gm8">
+              <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
+                <Choice Kind="ProcessAppFlag" Name="Merge (Spectral)" />
+              </p:NodeReference>
+              <Pin Id="ERRf0WxORjsO9WdIaCz9A9" Name="Value" Kind="InputPin" />
+              <Pin Id="T2t7QJmCQNuMCyiODq2VVP" Name="Result" Kind="OutputPin" />
+              <Pin Id="NRhzHwXBLF8OiaGWlbhBYT" Name="Changed" Kind="OutputPin" />
+            </Node>
+            <Pad Id="LBvUu5o2AMyO1ERrv9dTwW" SlotId="GdBnCrSy3yhMYkN0My4UKd" Bounds="398,643" />
+            <Node Bounds="261,967,63,26" Id="UyjST0HiNagMTmO2ATzrek">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.Conversation" LastDependency="OpenAI_API.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="Conversation" NeedsToBeDirectParent="true" />
+                <Choice Kind="OperationCallFlag" Name="Messages" />
+              </p:NodeReference>
+              <Pin Id="QSNHJbC48v3O8T804t5aMW" Name="Input" Kind="StateInputPin" />
+              <Pin Id="ROZeLfOErtWLOJnVRzTUE5" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="N0yEvjn3f4nNtNATvFQZL8" Name="Messages" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="485,1066,119,197" Id="OCgyEF9NahfLV6ptJnuDKe">
+              <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Primitive" />
+                <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
+              </p:NodeReference>
+              <Pin Id="LcfBfvh5443M9tpGcWweex" Name="Break" Kind="OutputPin" />
+              <ControlPoint Id="O32b8QWlRBKNbflT6Qqg3e" Bounds="499,1072" Alignment="Top" />
+              <Patch Id="Ffj4o4sh6bXPbBmkDYf0ir" ManuallySortedPins="true">
+                <Patch Id="AK4o6AI1IDXMsU3oDTR9HH" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="RL9aVk1Wtl8Mt5GkYhrcTy" Name="Update" ManuallySortedPins="true" />
+                <Patch Id="VYkUbXd043BMI0mnYB5eOi" Name="Dispose" ManuallySortedPins="true" />
+                <Node Bounds="537,1187,55,19" Id="Q91joyRart0LpRGOoNBDZ2">
+                  <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="ToString" />
+                  </p:NodeReference>
+                  <Pin Id="F7ZXibWXCxhLs198gyCujb" Name="Input" Kind="InputPin" />
+                  <Pin Id="PneNXvaG64CNrBmfdmSyGl" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="497,1092,64,26" Id="VuBcUHVLVHrMFFgb3aAZPr">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.ChatMessage" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="ChatMessage" />
+                    <Choice Kind="OperationCallFlag" Name="Content" />
+                  </p:NodeReference>
+                  <Pin Id="LvCSwiMYqYQNdRDD5RMMMm" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="IS2hpVj41H1PxXLfu7mWN4" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="UzvYcnwLpHiPPgc0x1Mu1s" Name="Content" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="498,1138,64,26" Id="E9C7h0dDwXBNeuYYhhnRg5">
+                  <p:NodeReference LastCategoryFullName="OpenAI_API.Chat.ChatMessage" LastDependency="OpenAI_API.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="ChatMessage" />
+                    <Choice Kind="OperationCallFlag" Name="Role" />
+                  </p:NodeReference>
+                  <Pin Id="QJZrJD1BT3DL29uH8F951r" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="KBacdzQk6TIQYsj5RCOsuJ" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="CPraaF9O7prNQUSLA9qKgj" Name="Role" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="539,1224,45,19" Id="Baznw8k4yc0MW8pzojYKrl">
+                  <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="+" />
+                  </p:NodeReference>
+                  <Pin Id="NSiP8i007eyNu2F28WYXOy" Name="Input" Kind="InputPin" />
+                  <Pin Id="LbgYkDsk8ZFLBTK5gJ9zhl" Name="Input 2" Kind="InputPin" DefaultValue=": " />
+                  <Pin Id="U0baZB1XcEpMTQ77XmGBtg" Name="Output" Kind="OutputPin" />
+                  <Pin Id="FeUS5bGxyLaPVJ0Anx1iuS" Name="Input 3" Kind="InputPin" />
+                </Node>
+              </Patch>
+              <ControlPoint Id="OFfKZvCE85xOc6HzCQxoBz" Bounds="541,1257" Alignment="Bottom" />
+            </Node>
+            <Pad Id="LxZQKb0WURuMg8r3ljo1fK" Bounds="488,1029,320,19" ShowValueBox="true" isIOBox="true" Value="TODO perform conversion only on change">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+              <p:ValueBoxSettings>
+                <p:fontsize p:Type="Int32">9</p:fontsize>
+                <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+              </p:ValueBoxSettings>
+            </Pad>
+            <ControlPoint Id="AJcZBO7rHT0M4HHHtb9qyz" Bounds="477,1337" />
+            <Pad Id="GODuzjqlswlMYu4fcbQ7wC" SlotId="GdBnCrSy3yhMYkN0My4UKd" Bounds="402,951" />
+            <Pad Id="RSC49SXg25uPsTZ1v39Vu2" Bounds="439,956,212,19" ShowValueBox="true" isIOBox="true" Value="TODO dispose of old observables?">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+              <p:ValueBoxSettings>
+                <p:fontsize p:Type="Int32">9</p:fontsize>
+                <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+              </p:ValueBoxSettings>
+            </Pad>
+          </Canvas>
+          <ProcessDefinition Id="Ozdh3Hxs6eKNxf6HqpMXTi">
+            <Fragment Id="RayhQ2eZuLQMKvQM18gYxG" Patch="K9OQoLvOXDZNdOJlyfCMcU" Enabled="true" />
+            <Fragment Id="Lop7C5ZA0YzNneb8tfKZLy" Patch="R2VIQMuRo00N8JTir0ynBt" Enabled="true" />
+            <Fragment Id="FUQsAn1tz3hP7UlbKzjx1u" Patch="PEQP3M0RU3oLuSswwusHFS" />
+          </ProcessDefinition>
+          <Slot Id="Cj8PF1mBeBfM4D6KW1W1s5" Name="OpenAI API" Summary="Last response" />
+          <Slot Id="ImDOzt9nNJuOjv34RfSFKS" Name="Conversation" />
+          <Link Id="GZ7TzAah6a3MOzvyHvVk3J" Ids="SrFxB5yn21VOnVCIrUEGSV,JF193lKhkrbPWptuAm7orb" />
+          <Link Id="TMefvkPFWKCNOm2qcg2P65" Ids="JRJODeiEEmCMjhkzibjIZv,NkdloDwP5oFM6M0qtleB7G" />
+          <Link Id="V2PQuNYRhH7QGQDVrZwg6d" Ids="GjvXZMy4GGWOl3LAe67hMt,V0F9Yy4yvqyOJMlk8OI3re" />
+          <Link Id="BYzotYT284IPtejG329hn4" Ids="GRJRD4sAf0tPMvJCAIoeMk,RBGLeDbw30IN8iQqowNkJf" />
+          <Link Id="SD079Dy3SAxMxEGOQOjNe1" Ids="UIjlcvNjKgGOV0R5piHQgC,EZJ8sCsthG9OGmfNBuHIhp" IsHidden="true" />
+          <Link Id="S6jdi2ZscaXLtkuZ1ldyRq" Ids="KEjNFtHlETzNZIUVQEBumL,Mb2nzi8UmCYPEmpaNh93Hs" IsHidden="true" />
+          <Link Id="QyuuG0bRuOEN9XuAyHIVMA" Ids="GXpHUvTOem1Lou8fFaRiut,IxEiThOoYsBOLkCmLrXj5N" IsHidden="true" />
+          <Link Id="JMzCwnMBCq2LfWjyZ7cvy6" Ids="KXZBvkGYD9SNQrHegyuozW,Nz2ARHJ49hqN05bW0dOBSR" IsHidden="true" />
+          <Link Id="MIdPdEoX7FlQD2ycT4dgvS" Ids="RcNNHjgPhFqPcTGHn2VUc6,Q1kEl7KiXi8OAwHQDiDWju" IsHidden="true" />
+          <Link Id="L0V5yJBtMnjQRKj2tPsAxU" Ids="KH572VDO9l5PnpcYNCu5gr,Iffw6Mznbo6N2xA7Keb1qy" IsHidden="true" />
+          <Link Id="DWHVAtm45LzM1atb2EKNhQ" Ids="RBGLeDbw30IN8iQqowNkJf,RcNNHjgPhFqPcTGHn2VUc6" />
+          <Link Id="GLUKFaQ1hixMQZLwQfo5yI" Ids="V68dwT26llQQcgjamBLYEL,TdBdvXCwSIXM2hj79fzkMK" />
+          <Link Id="QZsOwKjNmVZM0VeLNISod0" Ids="Nz2ARHJ49hqN05bW0dOBSR,TA3X2lfjsaXN2kfMwnb4s2" />
+          <Link Id="Ho1PfQMHRJMPjHBOKpfKZ8" Ids="GFf3jgcdF2JPw0cZuTOS5o,CnWT55iKp6gPu5EqH9LWZi" />
+          <Link Id="TfXALoNwjbcN4Oxt7enoTr" Ids="F9SYPasUlU9LiMlmji3843,MBalmrNot3MQVjcEAFlPLq" />
+          <Link Id="AJTKLhFqvDxOH3BIMXpYs4" Ids="V0F9Yy4yvqyOJMlk8OI3re,Eu9uFFlOmqIPgOrdsGM26y" />
+          <Link Id="SxpEJurpusHOHRtTbqZPZc" Ids="EZJ8sCsthG9OGmfNBuHIhp,OhmpREhVJGHNQLGa2fBIE7" />
+          <Link Id="Mo5xAdi8ZHXLjh9T2ZsD0k" Ids="QwPlPRDGKIWM8QSqDxsnDE,MC3H3OGBPVkMr74jzYC4lI" />
+          <Link Id="VunmxpV5qtTQR8UsZTWZzP" Ids="JmyM0r1KISuOjDsw1iLYGd,T0qDTYtQykxPo6LJt6hXBf" />
+          <Link Id="I4FiDp1fKVRP0W8OwqXPai" Ids="Mb2nzi8UmCYPEmpaNh93Hs,JeaFT1XdxN3MhuSsuF6Xn8" />
+          <Link Id="Uyy5g1XhyuTMu78edcfKbO" Ids="IxEiThOoYsBOLkCmLrXj5N,IGQbmNVGAcBPwQNPw6oURU" />
+          <Link Id="CICxtrHIqIdO1O4YAduS3o" Ids="HPHFrzfaq8ePt9bT89FvLI,OINB2Gv7xqCLJnpQwyu5BZ" IsFeedback="true" />
+          <Link Id="ILqHyAhDcYPMX9HO3XEsmX" Ids="HJxYlwmT0vJPEgQghoK0YT,OINB2Gv7xqCLJnpQwyu5BZ" />
+          <Link Id="EjybVuoHCICOdLoehcnljH" Ids="OINB2Gv7xqCLJnpQwyu5BZ,QJuPRB57oWBOYJjgTIUBI5" />
+          <Link Id="Ag2tAIdTKODNbFcR5opwTm" Ids="NNb0mnHTRrpLoMOcH2R5Ro,HPHFrzfaq8ePt9bT89FvLI" />
+          <Link Id="CCgiRtgvoCCMDB8MKVG93G" Ids="KSOH3ssc2wvMtcbEJjIQCc,BZN2U5ou4jBOtFWo2FERbo" />
+          <Link Id="MJy3jPOmU1YNiTuHieYH5i" Ids="KMQITrMZiF2LnXM2X2OpCa,OkJ5WB8u9lpO5KgyJLkf0e" />
+          <Link Id="Jd9i4wxLMmmN6lBo3UICGG" Ids="OZ9oLdwE83DMdezM4CZseQ,TtcNkA3NLO0OY5ZdqG52MQ" />
+          <Link Id="JnD8Q5piriCObFzRNdmsfM" Ids="E4qA47YclONOK94vCfDW3w,SyfA6JPqSc9PHFleuzty7L" IsFeedback="true" />
+          <Link Id="Tr3ek7CCXZqLIAFulrPVT4" Ids="E4qA47YclONOK94vCfDW3w,RSSLiCbLgbsNdj1AmidV2p" />
+          <Link Id="EWXvsONV1zyPCHOXu5S2Ew" Ids="LBvUu5o2AMyO1ERrv9dTwW,E4qA47YclONOK94vCfDW3w" />
+          <Slot Id="GdBnCrSy3yhMYkN0My4UKd" Name="Observables" />
+          <Link Id="VlhhmGlehZRLmCMsJxksd2" Ids="Ac7UGcJm0MqLU1PM04sg1X,SyfA6JPqSc9PHFleuzty7L" />
+          <Link Id="VGBSOP9BUrqOIpFY6wENTZ" Ids="T2t7QJmCQNuMCyiODq2VVP,ByXqtvkMNYIMp7xarfKrQ4" />
+          <Link Id="Cd9gkiK1FavQYWNYKu7Jgj" Ids="EdxGXhjjmIAOAMGjxE0O13,LSf7ARffFkcMmm1lFZAJC9" IsFeedback="true" />
+          <Link Id="Dri3hrqi177NMzDjUxnPgT" Ids="Ft822taPPEMN40POXv8JWe,LSf7ARffFkcMmm1lFZAJC9" />
+          <Link Id="TCbB7fM5eGAOLmvzohhgYw" Ids="LSf7ARffFkcMmm1lFZAJC9,QSNHJbC48v3O8T804t5aMW" />
+          <Link Id="NY3XTyGI422MsSISoynLzK" Ids="EdxGXhjjmIAOAMGjxE0O13,SCGm1ma0E0gQdsDmCsFI4E" />
+          <Link Id="Daa7HtCJLbhMHXBgnTobxq" Ids="QJuPRB57oWBOYJjgTIUBI5,EdxGXhjjmIAOAMGjxE0O13" />
+          <Link Id="Uc1A207hdZYLVK2x10YvQ3" Ids="N0yEvjn3f4nNtNATvFQZL8,O32b8QWlRBKNbflT6Qqg3e" />
+          <Link Id="FRT6zlv7C14NoD2tzCuC2J" Ids="IS2hpVj41H1PxXLfu7mWN4,QJZrJD1BT3DL29uH8F951r" />
+          <Link Id="OpNrw10EOImNMEGhk4bnuG" Ids="O32b8QWlRBKNbflT6Qqg3e,LvCSwiMYqYQNdRDD5RMMMm" />
+          <Link Id="ULnu3PQyIgaLoOFHnjGnjz" Ids="PneNXvaG64CNrBmfdmSyGl,NSiP8i007eyNu2F28WYXOy" />
+          <Link Id="CWoVc8DNs06PGBJc3bSPOF" Ids="CPraaF9O7prNQUSLA9qKgj,F7ZXibWXCxhLs198gyCujb" />
+          <Link Id="AzVbdv8fxkkPezyuC2HOfM" Ids="UzvYcnwLpHiPPgc0x1Mu1s,FeUS5bGxyLaPVJ0Anx1iuS" />
+          <Link Id="CdJZhjwwYdEP3EjF7PC7MR" Ids="U0baZB1XcEpMTQ77XmGBtg,OFfKZvCE85xOc6HzCQxoBz" />
+          <Link Id="NbG6flbrZeqQPqQSjD94Lz" Ids="OFfKZvCE85xOc6HzCQxoBz,KH572VDO9l5PnpcYNCu5gr" />
+          <Link Id="FISGnxAQjr2MEjaXlNpllX" Ids="LuneX4urL9KOps3jOYgNxu,AJcZBO7rHT0M4HHHtb9qyz" />
+          <Link Id="IUG2p9omAmgNvrDZ5G5sG5" Ids="AJcZBO7rHT0M4HHHtb9qyz,HFhAU3C4xthNEje0xXm6qQ" IsHidden="true" />
+          <Patch Id="K9OQoLvOXDZNdOJlyfCMcU" Name="Create" ParticipatingElements="V2PQuNYRhH7QGQDVrZwg6d" />
+          <Patch Id="R2VIQMuRo00N8JTir0ynBt" Name="Update">
+            <Pin Id="UIjlcvNjKgGOV0R5piHQgC" Name="Prompt" Kind="InputPin" />
+            <Pin Id="GXpHUvTOem1Lou8fFaRiut" Name="Send" Kind="InputPin" />
+            <Pin Id="KXZBvkGYD9SNQrHegyuozW" Name="Model" Kind="InputPin" />
+            <Pin Id="KEjNFtHlETzNZIUVQEBumL" Name="Reset" Kind="InputPin" />
+            <Pin Id="Q1kEl7KiXi8OAwHQDiDWju" Name="Output" Kind="OutputPin" />
+            <Pin Id="HFhAU3C4xthNEje0xXm6qQ" Name="On Data" Kind="OutputPin" Bounds="477,1337" />
+            <Pin Id="Iffw6Mznbo6N2xA7Keb1qy" Name="Messages" Kind="OutputPin" />
+          </Patch>
+          <Link Id="Ge2dU8hCfgSP3gTwctYGFK" Ids="SyfA6JPqSc9PHFleuzty7L,GODuzjqlswlMYu4fcbQ7wC" />
+          <Link Id="Mz8L3KObvzvK9uGSb06cqG" Ids="GODuzjqlswlMYu4fcbQ7wC,ERRf0WxORjsO9WdIaCz9A9" />
+          <Link Id="M8msgdgO5zULSTTwLvQjg2" Ids="Nz2ARHJ49hqN05bW0dOBSR,KOSwjAGuV60Pxh1dM7m6T0" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="GzS10oTkIGnMGZknNaV2y2">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="PbUNtDBhKLVPbHQvb8Ta2L">
+        <Canvas Id="QOaMfDZHJrCLJ8x5mM6Dq2" CanvasType="Group" />
+        <Patch Id="DBYmxfeIOlcLboDdIT5h0Z" Name="Create" />
+        <Patch Id="DogxJckKCZBOH8kuk619TC" Name="Update" />
+        <ProcessDefinition Id="Tj3xex7K12gLJd6jX9L1AG">
+          <Fragment Id="EyvBKHDCCxfLfKfYFfCAen" Patch="DBYmxfeIOlcLboDdIT5h0Z" Enabled="true" />
+          <Fragment Id="D3Clk786tbBPenDaPo3VHE" Patch="DogxJckKCZBOH8kuk619TC" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="Ko9OqCOVyY7Pz8mbJrOqb0" Location="VL.CoreLib" Version="2023.5.2" />
+  <NugetDependency Id="OTTXv6oRrwKO0eTv6mM9tD" Location="OpenAI" Version="1.10.0" />
+</Document>

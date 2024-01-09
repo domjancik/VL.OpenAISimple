@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="CyrzrE7TlorO8uWeLTEimL" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="GIdrfnBiHkONSHTjDr3bYi" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="MP4uMjlKDTFPLUqNrhqvQu">
+    <Canvas Id="CTxow7CJj2wPEGkFQjPAs5" DefaultCategory="Main" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="ApuLL6HcViuLCPsKgSymTB">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="NMzkZltLLxqNRhyubEPQpq">
+        <Canvas Id="DuR1SaDnmgyOSb6TWA0Aur" CanvasType="Group">
+          <Node Bounds="105,194,65,19" Id="Lk07O6NDBDQLnNzpNZCMnt">
+            <p:NodeReference LastCategoryFullName="VL.OpenAI" LastDependency="VL.OpenAI.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Chat" />
+            </p:NodeReference>
+            <Pin Id="Hdarmw4n7xyLICDDgJmaWt" Name="Prompt" Kind="InputPin" />
+            <Pin Id="Jfl7aRyq7LDN3mAhCO9ZYj" Name="Send" Kind="InputPin" />
+            <Pin Id="L2FkYLIvXeAOPXW3GVLSz2" Name="Model" Kind="InputPin" />
+            <Pin Id="KjbS8u4yCtoQQXvYZ2GFRt" Name="Reset" Kind="InputPin" />
+            <Pin Id="UHi89cm7qV7LCUTr8nCsG5" Name="Output" Kind="OutputPin" />
+            <Pin Id="SQ1hm9B2jhAQIpCZq3hC3f" Name="On Data" Kind="OutputPin" />
+            <Pin Id="PgluY8FZB2lPMt706e6KQp" Name="Messages" Kind="OutputPin" />
+          </Node>
+          <Pad Id="T7l2lq7NU8kOP0NDOPG9am" Comment="" Bounds="74,246,69,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="J9iUaaHhu5ePp98mi75tLb" Comment="Messages" Bounds="167,244,722,80" ShowValueBox="true" isIOBox="true">
+            <p:Value>
+              <Item></Item>
+            </p:Value>
+          </Pad>
+          <Pad Id="HW23bVX7DtiQXsBjzqDNpq" Comment="Prompt" Bounds="54,74,212,15" ShowValueBox="true" isIOBox="true" Value="Hello, are you a cucumber?">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="MrAFiDbgdOcQT04Cb3J8kz" Comment="Send" Bounds="123,131,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="I1mWdL6l3pkPt9ARIEuilY" Comment="Reset" Bounds="227,126,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="Gg7prs4V9XrNQ0LA8mUtPP" Name="Create" />
+        <Patch Id="GbddHxbXwOJNLzBfzDymAo" Name="Update" />
+        <ProcessDefinition Id="N2V0UwSbhSYQN02qsNTZha">
+          <Fragment Id="Sq68vTstrtCN6tu4WWLgJp" Patch="Gg7prs4V9XrNQ0LA8mUtPP" Enabled="true" />
+          <Fragment Id="EDbnj9LkEpULRYnsPtqixn" Patch="GbddHxbXwOJNLzBfzDymAo" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="OZUxby2svroL0TzjulYfat" Ids="UHi89cm7qV7LCUTr8nCsG5,T7l2lq7NU8kOP0NDOPG9am" />
+        <Link Id="F6tayrWLr3pOZUCrN7bIgY" Ids="PgluY8FZB2lPMt706e6KQp,J9iUaaHhu5ePp98mi75tLb" />
+        <Link Id="Sx5yNrT2UnkLbvYfoDFQSO" Ids="HW23bVX7DtiQXsBjzqDNpq,Hdarmw4n7xyLICDDgJmaWt" />
+        <Link Id="P289R6hivhPNYTY7cbR2Qs" Ids="MrAFiDbgdOcQT04Cb3J8kz,Jfl7aRyq7LDN3mAhCO9ZYj" />
+        <Link Id="FFT7Lkih7zkMXFqPqC4jxO" Ids="I1mWdL6l3pkPt9ARIEuilY,KjbS8u4yCtoQQXvYZ2GFRt" />
+      </Patch>
+    </Node>
+  </Patch>
+  <DocumentDependency Id="VFc6t3iEQbhPIjlmcFSelp" Location="../VL.OpenAI.vl" />
+</Document>
