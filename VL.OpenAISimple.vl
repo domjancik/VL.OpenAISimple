@@ -2,7 +2,7 @@
 <Document xmlns:p="property" xmlns:r="reflection" Id="EMmQUjRpZ3mPfTEEA0yueK" LanguageVersion="2023.5.2" Version="0.128">
   <NugetDependency Id="ACwLMEAeXcTOlfIlaZVQ9S" Location="VL.CoreLib" Version="2023.5.2" />
   <Patch Id="Rgz0iK0cdl5O6XLZAnSI2k">
-    <Canvas Id="EtMz6eWyJpjMOVOROl6714" DefaultCategory="VL.OpenAI" CanvasType="FullCategory">
+    <Canvas Id="EtMz6eWyJpjMOVOROl6714" DefaultCategory="VL.OpenAISimple" CanvasType="FullCategory">
       <!--
 
     ************************ Chat ************************
@@ -234,7 +234,7 @@
                 <Patch Id="DEpDKwVmrKMNimzSYgP9Oo" Name="Create" ManuallySortedPins="true" />
                 <Patch Id="VVhdnaiDMImMOR3CdpElLY" Name="Then" ManuallySortedPins="true" />
                 <Node Bounds="353,510,119,19" Id="OTHZk2GMSqZNPFf1rf8z7D">
-                  <p:NodeReference LastCategoryFullName="VL.OpenAI.Chat" LastDependency="VL.OpenAI.vl">
+                  <p:NodeReference LastCategoryFullName="VL.OpenAISimple.Chat" LastDependency="VL.OpenAISimple.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="BootstrapConversation" />
                   </p:NodeReference>
@@ -428,6 +428,536 @@
           <Link Id="M8msgdgO5zULSTTwLvQjg2" Ids="Nz2ARHJ49hqN05bW0dOBSR,KOSwjAGuV60Pxh1dM7m6T0" />
         </Patch>
       </Node>
+      <Canvas Id="LOtxHKcJ21mPp1yPRD5AZ0" Name="Model" Position="189,73">
+        <!--
+
+    ************************ AdaText ************************
+
+-->
+        <Node Name="AdaText" Bounds="118,103,113,82" Id="Kk91hzTQOINLdM2Xze1EXX">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="U5u1htIUMEeQIlUEGOuhJL">
+            <Node Bounds="131,135,54,19" AutoConnect="true" Id="B9CMUhd23KGPkMiLCNjCET">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="AdaText" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="Nimc1MsvOphOuKwbkHCtjg" Name="Ada Text" Kind="OutputPin" />
+            </Node>
+            <Pin Id="OPhpILzn9NPQB0KdbfaE1b" Name="Ada Text" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ AdaTextEmbedding ************************
+
+-->
+        <Node Name="AdaTextEmbedding" Bounds="399,103,129,82" Id="MMI9RLyzwTCON584OzZidV">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="Q0A0nJXggkHL252Fob1oEN">
+            <Node Bounds="411,135,105,19" AutoConnect="true" Id="IfoliCF55t5MGx4vW0Dfkz">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="AdaTextEmbedding" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="AmSyAfjJxB5O6p9vxT9HlG" Name="Ada Text Embedding" Kind="OutputPin" />
+            </Node>
+            <Pin Id="QJXYv5ndozqNzoeWYCWyxd" Name="Ada Text Embedding" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ Babbage ************************
+
+-->
+        <Node Name="Babbage" Bounds="678,103,112,82" Id="SZktEiWEGHCNfMT59vyCgC">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="OJuf7J250gGLNjhYkJjdsD">
+            <Node Bounds="691,135,55,19" AutoConnect="true" Id="Cu45ht310GbMo9bDSikYXJ">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="Babbage" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="VTfUSFSMrQVOUeEGBqKaBN" Name="Babbage" Kind="OutputPin" />
+            </Node>
+            <Pin Id="GIIv9nrhdBNQDZFdxuhwsX" Name="Babbage" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ BabbageText ************************
+
+-->
+        <Node Name="BabbageText" Bounds="959,103,112,82" Id="JkP6rCBqEQRPRqsLpKmLnF">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="IdDcwlOIS1lLU1kzHv9szD">
+            <Node Bounds="971,135,75,19" AutoConnect="true" Id="JdhCTV5uEQYNpje7RDTEX7">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="BabbageText" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="MSjsiRZNjZnLeJTgxG3rx3" Name="Babbage Text" Kind="OutputPin" />
+            </Node>
+            <Pin Id="Q6TqiOImpbDPmNgF6fcLoL" Name="Babbage Text" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ ChatGPTTurbo ************************
+
+-->
+        <Node Name="ChatGPTTurbo" Bounds="1239,103,112,82" Id="Tb33FGWzKu1NRAGwAAXkAm">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="IgXDNE8UNTXPgmd9XVtvL8">
+            <Node Bounds="1251,135,82,19" AutoConnect="true" Id="QpPYkSRAmgkOjZlFYEZtnZ">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="ChatGPTTurbo" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="JL6W2i3A2b9K9wDqrcE5BM" Name="Chat GPTTurbo" Kind="OutputPin" />
+            </Node>
+            <Pin Id="QMxSTDEmPCnODjYJ2rlkoI" Name="Chat GPTTurbo" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ ChatGPTTurboInstruct ************************
+
+-->
+        <Node Name="ChatGPTTurboInstruct" Bounds="119,253,141,82" Id="BgV6BIdhbcOLiXQ6vb012C">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="Ah1VoyFsyNiO9PaXf5L42e">
+            <Node Bounds="131,285,117,19" AutoConnect="true" Id="D7mSSx3EdhtMppbz4m1m6B">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="ChatGPTTurboInstruct" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="RLFaEMwP1ODO07YPcjEtU4" Name="Chat GPTTurbo Instruct" Kind="OutputPin" />
+            </Node>
+            <Pin Id="AUGqW8L7GiVPhx5gDgcavp" Name="Chat GPTTurbo Instruct" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ ChatGPTTurbo_16k ************************
+
+-->
+        <Node Name="ChatGPTTurbo_16k" Bounds="399,253,128,82" Id="MQ0BEhiAOvmLL947AJ864Q">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="DVj8xx0ro8bOOujI8TL1R8">
+            <Node Bounds="411,285,104,19" AutoConnect="true" Id="QxieFM9zoXcOHMioiFB2ZA">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="ChatGPTTurbo_16k" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="Pw8jArzk92QN6oEvDeJX51" Name="Chat GPTTurbo_16k" Kind="OutputPin" />
+            </Node>
+            <Pin Id="Oi1gX49SgTsPXtHkPbgLI9" Name="Chat GPTTurbo_16k" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ CurieText ************************
+
+-->
+        <Node Name="CurieText" Bounds="679,253,112,82" Id="IYpuPoCIfRTOYfOuWcVup9">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="Mh9QWOrmke6Lh6UahlfWog">
+            <Node Bounds="691,285,61,19" AutoConnect="true" Id="OmiZ4cW2jtfOmU4UJYdq9L">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="CurieText" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="JbXJJifIjWyLCO2vb2oCzx" Name="Curie Text" Kind="OutputPin" />
+            </Node>
+            <Pin Id="N4Rop31323jLBxKbfFDs7K" Name="Curie Text" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ DALLE2 ************************
+
+-->
+        <Node Name="DALLE2" Bounds="956,253,114,82" Id="Q8rm7eMq2ACOpv4vRvtE3e">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="DDGBR05cY9wOLzkHHT5V12">
+            <Node Bounds="971,285,51,19" AutoConnect="true" Id="OPtKRkzMxYnMpqVze6c0Hk">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="DALLE2" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="STWCYVcILFHOgQRslOb93O" Name="DALLE2" Kind="OutputPin" />
+            </Node>
+            <Pin Id="VyyJiBZnnBvLiPFbbZlvSJ" Name="DALLE2" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ DALLE3 ************************
+
+-->
+        <Node Name="DALLE3" Bounds="1236,253,114,82" Id="RjiZofwV7ihLNoKkNo5kuq">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="MSLOzQQ0G6DMzywUmKfFd0">
+            <Node Bounds="1251,285,51,19" AutoConnect="true" Id="CijHHna2SoAPUx0ZJcLYtW">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="DALLE3" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="RI6KPsI2s3zNIPr9Ip0LRZ" Name="DALLE3" Kind="OutputPin" />
+            </Node>
+            <Pin Id="NYhL0w98aBuO0Jx5GaLnjy" Name="DALLE3" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ Davinci ************************
+
+-->
+        <Node Name="Davinci" Bounds="116,403,116,82" Id="FAOeC2JYOnGNDMrDZKglak">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="IxOjg9U1LbgPM4fWnpJxAp">
+            <Node Bounds="131,435,49,19" AutoConnect="true" Id="BcpN3PWK65bNVd3jSIalVD">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="Davinci" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="DFwvfKMFcdzQAfr9sMLSIn" Name="Davinci" Kind="OutputPin" />
+            </Node>
+            <Pin Id="Krw36zcJcPWMTPciwN0qYy" Name="Davinci" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ DefaultChatModel ************************
+
+-->
+        <Node Name="DefaultChatModel" Bounds="959,403,122,82" Id="C5vHCiIig0DMN4p7FWG39B">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="OE3fjbX4hyXO7FUEUtGqri">
+            <Node Bounds="971,435,98,19" AutoConnect="true" Id="UUuYMOmnGPfNIiFU3K5Ya1">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="DefaultChatModel" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="CB7UPVHvUgiM1Rz7DeUDuj" Name="Default Chat Model" Kind="OutputPin" />
+            </Node>
+            <Pin Id="RwYAdndyjEiNfyjBGoHzw6" Name="Default Chat Model" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ DefaultModel ************************
+
+-->
+        <Node Name="DefaultModel" Bounds="1239,403,112,82" Id="AhcmtZ5RxBcQJzkGrOmNT4">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="NoQrJNR17HbLrINJ9tOR4L">
+            <Node Bounds="1251,435,77,19" AutoConnect="true" Id="UjeLYwdPe1lQUEuXZcn5KS">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="DefaultModel" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="NLR1X8DxEohM47wuvFrtia" Name="Default Model" Kind="OutputPin" />
+            </Node>
+            <Pin Id="A9pgt84EewNLZnPfeUY0Ef" Name="Default Model" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ DefaultTranscriptionModel ************************
+
+-->
+        <Node Name="DefaultTranscriptionModel" Bounds="119,553,161,82" Id="F6x7tZLJGyEL5Wdl9t0v9l">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="VIzWPPqK7yKM9xatnN91LP">
+            <Node Bounds="131,585,137,19" AutoConnect="true" Id="A7GGcPI2TAFLvIVJAw7FZM">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="DefaultTranscriptionModel" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="LvYkcoyzVzTLHi3sqiMxd0" Name="Default Transcription Model" Kind="OutputPin" />
+            </Node>
+            <Pin Id="D1gL3H7dtKCL8IPXIbDr0s" Name="Default Transcription Model" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ DefaultTTSModel ************************
+
+-->
+        <Node Name="DefaultTTSModel" Bounds="399,553,118,82" Id="M7fg1qUgifDL33znDmtPo7">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="CMvGd6NxpidPbKfsMPcKnb">
+            <Node Bounds="411,585,94,19" AutoConnect="true" Id="HR2w87YpJV9Nc9s64vP1iq">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="DefaultTTSModel" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="KgmxyiKr4mxNn9TMMjrUEc" Name="Default TTSModel" Kind="OutputPin" />
+            </Node>
+            <Pin Id="RDM0eE8hmUnO6EABhU9Uoj" Name="Default TTSModel" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ GPT4 ************************
+
+-->
+        <Node Name="GPT4" Bounds="671,553,120,82" Id="TDLBQkij7qnOXxmlCzdF87">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="A0neYlfnXT0PkGiiTvkt15">
+            <Node Bounds="691,585,40,19" AutoConnect="true" Id="UyeeE4lOdH8P6WCrwIs4vh">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="GPT4" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="DXUgo9DIdKcM39sMWediSg" Name="GPT4" Kind="OutputPin" />
+            </Node>
+            <Pin Id="BaoaoQr6nT1PHUvik240nx" Name="GPT4" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ GPT4_32k_Context ************************
+
+-->
+        <Node Name="GPT4_32k_Context" Bounds="959,553,127,82" Id="OJAvzwJeecgLJkSgrVw5nu">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="GUjlwxY5dLSQTdfe4CMg7E">
+            <Node Bounds="971,585,103,19" AutoConnect="true" Id="B6xkEGjiiFtNQAvNkBQGLb">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="GPT4_32k_Context" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="Ko1kzRQMMomNHRX8eVwIwi" Name="GPT4_32k_Context" Kind="OutputPin" />
+            </Node>
+            <Pin Id="R2lPdBd6yYQOeJePQSrmeN" Name="GPT4_32k_Context" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ GPT4_Turbo ************************
+
+-->
+        <Node Name="GPT4_Turbo" Bounds="1239,553,112,82" Id="LRtf8s4bQefLgUKuU0euTa">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="UkEya2yb3SJNYuCNmyxRHO">
+            <Node Bounds="1251,585,72,19" AutoConnect="true" Id="DYrGADbdZOZNmbaG28FR4X">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="GPT4_Turbo" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="JT8iLZwJL42Pa93e0X7ooS" Name="GPT4_Turbo" Kind="OutputPin" />
+            </Node>
+            <Pin Id="PLwK6Au4Oi4PV7XbqBzQ57" Name="GPT4_Turbo" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ GPT4_Vision ************************
+
+-->
+        <Node Name="GPT4_Vision" Bounds="119,703,112,82" Id="FMRe12hB1coOAglg5PnEmB">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="QaB07g03GYfMkiJSPfctmr">
+            <Node Bounds="131,735,73,19" AutoConnect="true" Id="RsFhwN4g0x3QTQh70kgwBw">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="GPT4_Vision" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="S7rP1GYSm8wOG5KPCjQvER" Name="GPT4_Vision" Kind="OutputPin" />
+            </Node>
+            <Pin Id="Hyqx5cUTRVELVXdHNpEnxo" Name="GPT4_Vision" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ TextModerationLatest ************************
+
+-->
+        <Node Name="TextModerationLatest" Bounds="399,703,139,82" Id="BCcQDeStRNrL8LPgAxj9h0">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="IWKQzEm6yXWLnwFAyStnFl">
+            <Node Bounds="411,735,115,19" AutoConnect="true" Id="QQpCmFi3CMIO9Z7fFQhqJg">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="TextModerationLatest" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="Bw3qj8kGryoMoZYhsjVi6z" Name="Text Moderation Latest" Kind="OutputPin" />
+            </Node>
+            <Pin Id="JAVHc8sf20PLl1hrYoOHOe" Name="Text Moderation Latest" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ TextModerationStable ************************
+
+-->
+        <Node Name="TextModerationStable" Bounds="679,703,140,82" Id="AlEw420oKL4NtmvBMcKFbU">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="AhM9YCLmlcvQJrfapupqco">
+            <Node Bounds="691,735,116,19" AutoConnect="true" Id="JsDegNSvPtiNwkCzWqOhgr">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="TextModerationStable" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="VkcGqmc8UibOPiVsJAQdQo" Name="Text Moderation Stable" Kind="OutputPin" />
+            </Node>
+            <Pin Id="FdfxKT9I3RjNNYlguvxFbY" Name="Text Moderation Stable" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ TTS_HD ************************
+
+-->
+        <Node Name="TTS_HD" Bounds="957,703,114,82" Id="T3KpfTQSKX7L6JnG2mZtf9">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="SyyNEmrBAHrP8bJ0KCCDPP">
+            <Node Bounds="971,735,52,19" AutoConnect="true" Id="NGA3dxVPf3IQEwtgDAFq3G">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="TTS_HD" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="Uhd8GdObk0yPerxzeOeGYC" Name="TTS_HD" Kind="OutputPin" />
+            </Node>
+            <Pin Id="EFaP90bn4wOOtBMhtSnpAA" Name="TTS_HD" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ TTS_Speed ************************
+
+-->
+        <Node Name="TTS_Speed" Bounds="1239,703,112,82" Id="MiXYm4jHNrtNkdwCY55da1">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="AgVFyVPU001PwQe6bo2hmN">
+            <Node Bounds="1251,735,65,19" AutoConnect="true" Id="OuN407e1LqXQITQdOGybBn">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="TTS_Speed" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="ExPP62h4wxWOwBv5E1knpr" Name="TTS_Speed" Kind="OutputPin" />
+            </Node>
+            <Pin Id="SlRMtSu4X5DL6xBMBilnNZ" Name="TTS_Speed" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ Whisper1 ************************
+
+-->
+        <Node Name="Whisper1" Bounds="119,853,112,82" Id="DF8OCmheXdLOQM1QD3wPjL">
+          <p:NodeReference>
+            <Choice Kind="OperationDefinition" Name="Operation" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:HideCategory p:Type="Boolean">false</p:HideCategory>
+          <Patch Id="AoAWxnsOHnKLhGJ7QeBDDZ">
+            <Node Bounds="131,885,59,19" AutoConnect="true" Id="NzHQyNfO99yOYJj4PCX22O">
+              <p:NodeReference LastCategoryFullName="OpenAI_API.Models.Model" LastDependency="OpenAI_API.dll">
+                <Choice Kind="OperationNode" Name="Whisper1" />
+                <FullNameCategoryReference ID="OpenAI_API.Models.Model" />
+              </p:NodeReference>
+              <Pin Id="SFDNSXa6RhaQQaowqzE1Wd" Name="Whisper 1" Kind="OutputPin" />
+            </Node>
+            <Pin Id="GbkgWlOq251NNunb7Z4VNt" Name="Whisper 1" Kind="OutputPin" />
+          </Patch>
+        </Node>
+      </Canvas>
     </Canvas>
     <!--
 

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
-    <id>VL.OpenAI</id>
+    <id>VL.OpenAISimple</id>
     <version>0.0.1</version>
-    <title>VL.OpenAI</title>
+    <title>VL.OpenAISimple</title>
     <authors>Dominik Jancik (domj)</authors>
     <owners>Dominik Jancik (domj)</owners>
-    <projectUrl>https://github.com/domjancik/VL.OpenAI</projectUrl>
+    <projectUrl>https://github.com/domjancik/VL.OpenAISimple</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>vvvv gamma nodes to interact with OpenAI APIs</summary>
     <description>VL/vvvv gamma nodeset wrapping the https://github.com/betalgo/openai library, enabling access to OpenAI APIs from vvvv gamma</description>
