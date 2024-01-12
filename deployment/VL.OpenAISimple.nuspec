@@ -2,21 +2,25 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>VL.OpenAISimple</id>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <title>VL.OpenAISimple</title>
     <authors>Dominik Jancik (domj)</authors>
     <owners>Dominik Jancik (domj)</owners>
     <projectUrl>https://github.com/domjancik/VL.OpenAISimple</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>vvvv gamma nodes to interact with OpenAI APIs</summary>
-    <description>VL/vvvv gamma nodeset wrapping the https://github.com/betalgo/openai library, enabling access to OpenAI APIs from vvvv gamma</description>
+    <description>VL/vvvv gamma nodeset wrapping the https://github.com/betalgo/openai library,
+      enabling access to OpenAI APIs from vvvv gamma</description>
     <tags>nuget</tags>
-	<license type="expression">MIT</license>
-	<icon>icon\nugeticon.png</icon>
+    <dependencies>
+      <dependency id="openai" version="[1.10.0]" />
+    </dependencies>
+    <license type="expression">MIT</license>
+    <icon>icon\nugeticon.png</icon>
   </metadata>
   <files>
     <file src="..\*.vl" target="" exclude="" />
     <file src="..\help\**" target="help\" exclude="" />
-	<file src="nugeticon.png" target="icon\" />
+    <file src="nugeticon.png" target="icon\" />
   </files>
 </package>

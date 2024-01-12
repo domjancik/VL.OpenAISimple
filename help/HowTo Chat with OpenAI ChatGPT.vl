@@ -16,7 +16,7 @@
       <Patch Id="NMzkZltLLxqNRhyubEPQpq">
         <Canvas Id="DuR1SaDnmgyOSb6TWA0Aur" CanvasType="Group">
           <Node Bounds="105,194,65,19" Id="Lk07O6NDBDQLnNzpNZCMnt">
-            <p:NodeReference LastCategoryFullName="VL.OpenAI" LastDependency="VL.OpenAI.vl">
+            <p:NodeReference LastCategoryFullName="VL.OpenAISimple" LastDependency="VL.OpenAISimple.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Chat" />
             </p:NodeReference>
@@ -57,6 +57,22 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
+          <Node Bounds="146,20,82,26" Id="EpMDh2ipwfvMqycCT4dKpH">
+            <p:NodeReference LastCategoryFullName="VL.OpenAISimple.Model" LastDependency="VL.OpenAISimple.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="ChatGPTTurbo" />
+            </p:NodeReference>
+            <Pin Id="EBiXXKJ8mEOP9sPRuKVwno" Name="Chat GPTTurbo" Kind="OutputPin" />
+          </Node>
+          <Pad Id="DSJ8RdCDU68PFJnUY4dPew" Bounds="229,33,225,19" ShowValueBox="true" isIOBox="true" Value="Defaults to ChatGPTTurbo if omitted">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="Gg7prs4V9XrNQ0LA8mUtPP" Name="Create" />
         <Patch Id="GbddHxbXwOJNLzBfzDymAo" Name="Update" />
@@ -69,8 +85,9 @@
         <Link Id="Sx5yNrT2UnkLbvYfoDFQSO" Ids="HW23bVX7DtiQXsBjzqDNpq,Hdarmw4n7xyLICDDgJmaWt" />
         <Link Id="P289R6hivhPNYTY7cbR2Qs" Ids="MrAFiDbgdOcQT04Cb3J8kz,Jfl7aRyq7LDN3mAhCO9ZYj" />
         <Link Id="FFT7Lkih7zkMXFqPqC4jxO" Ids="I1mWdL6l3pkPt9ARIEuilY,KjbS8u4yCtoQQXvYZ2GFRt" />
+        <Link Id="LKafWeD5PFsQHLmGKUScak" Ids="EBiXXKJ8mEOP9sPRuKVwno,L2FkYLIvXeAOPXW3GVLSz2" />
       </Patch>
     </Node>
   </Patch>
-  <DocumentDependency Id="VFc6t3iEQbhPIjlmcFSelp" Location="../VL.OpenAI.vl" />
+  <DocumentDependency Id="GzdvQ1ETvMWPIjMbRgbwTo" Location="../VL.OpenAISimple.vl" />
 </Document>
